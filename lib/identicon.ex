@@ -3,11 +3,14 @@ defmodule Identicon do
   Documentation for `Identicon`.
   """
   
+  require Integer
+
   def main(input) do
     input
     |> hash_input
     |> pick_color
     |> build_grid
+    |> remove_odd_squares
   end
 
   def hash_input(input) do
@@ -35,5 +38,13 @@ defmodule Identicon do
     [first, second | _tail] = row
 
     row ++ [second, first]
+  end
+
+  def remove_odd_squares(%Identicon.Image{ grid: grid } = image) do
+    grid = Enum.filter grid, fn({ number, _index }) ->
+      Integer.is_even(number)
+    end
+
+    %Identicon.Image{ image | grid: grid }
   end
 end
