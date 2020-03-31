@@ -1,21 +1,17 @@
 # Identicon
 
-**TODO: Add description**
+My first project with elixir and functional programming.
 
-## Installation
+It generates a 250x250 png identicon image.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `identicon` to your list of dependencies in `mix.exs`:
+## Usage
 
-```elixir
-def deps do
-  [
-    {:identicon, "~> 0.1.0"}
-  ]
-end
+Make sure you have elixir/erlang installed and up to date, then clone this repository.
+
+```
+$ cd identicon
+$ iex -S mix
+iex> Identicon.main('your string here')
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/identicon](https://hexdocs.pm/identicon).
-
+A png image will be outputed in source folder nammed after the string you passed as the argument.
